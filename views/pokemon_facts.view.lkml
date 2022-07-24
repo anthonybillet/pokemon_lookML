@@ -438,6 +438,20 @@ SELECT
     label: "Learn Method"
     type: string
     sql: ${TABLE}.move_learn_method ;;
+    order_by_field: move_learn_method_order
+  }
+
+  dimension: move_learn_method_order {
+    view_label: "Moves"
+    label: "Learn Method"
+    type: string
+    sql: CASE
+              WHEN ${TABLE}.move_learn_method = 'level-up' THEN 1
+              WHEN ${TABLE}.move_learn_method = 'machine' THEN 2
+              WHEN ${TABLE}.move_learn_method = 'tutor' THEN 3
+              WHEN ${TABLE}.move_learn_method = 'egg' THEN 4
+              ELSE 5
+         END;;
   }
 
   dimension: item_id {

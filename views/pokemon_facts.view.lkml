@@ -188,7 +188,7 @@ SELECT
     sql: ${TABLE}.pokemon_name ;;
     link: {
       label: "Link to {{value}} Deep Dive"
-      url: "/dashboards-next/6?Pokemon+Name={{pokemon_facts.pokemon_name._value}}&Game%20Version%20(For%20Learnset)={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
+      url: "/dashboards-next/8?Pokemon+Name={{pokemon_facts.pokemon_name._value}}&Game+Version+%28For+Learnset%29={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
     }
     link: {
       label: "Link to {{value}} Index"
@@ -204,7 +204,7 @@ SELECT
     html: <img src="https://img.pokemondb.net/artwork/large/{{pokemon_facts.pokemon_name_lower._value}}.jpg" height="90%" width="90%">;;
     link: {
       label: "Link to {{value}} Deep Dive"
-      url: "/dashboards-next/6?Pokemon+Name={{pokemon_facts.pokemon_name._value}}&Game%20Version%20(For%20Learnset)={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
+      url: "/dashboards-next/8?Pokemon+Name={{pokemon_facts.pokemon_name._value}}&Game+Version+%28For+Learnset%29={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
     }
     link: {
       label: "Link to {{value}} Index"
@@ -220,7 +220,6 @@ SELECT
     html: <img src="https://img.pokemondb.net/sprites/sword-shield/icon/{{pokemon_facts.pokemon_name_lower._value}}.png">;;
     link: {
       label: "Link to {{value}} Deep Dive"
-      url: "/dashboards-next/6?Pokemon+Name={{pokemon_facts.pokemon_name._value}}&Game%20Version%20(For%20Learnset)={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
     }
     link: {
       label: "Link to {{value}} Index"
@@ -237,7 +236,7 @@ SELECT
     html: <img src="https://img.pokemondb.net/sprites/sword-shield/icon/{{pokemon_facts.pokemon_name_lower._value}}.png" {{linked_value}} ;;
     link: {
       label: "Link to {{value}} Deep Dive"
-      url: "/dashboards-next/6?Pokemon+Name={{pokemon_facts.pokemon_name._value}}&Game%20Version%20(For%20Learnset)={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
+      url: "/dashboards-next/8?Pokemon+Name={{pokemon_facts.pokemon_name._value}}&Game+Version+%28For+Learnset%29={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
     }
     link: {
       label: "Link to {{value}} Index"
@@ -843,7 +842,7 @@ SELECT
 
     link: {
       label: "Link to {{pokemon_facts.final_evo_poke_filter_helper._value}} Deep Dive"
-      url: "/dashboards-next/6?Pokemon+Name={{pokemon_facts.final_evo_poke_filter_helper._value}}&Game%20Version%20(For%20Learnset)={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
+      url: "/dashboards-next/8?Pokemon+Name={{pokemon_facts.final_evo_poke_filter_helper._value}}&Game+Version+%28For+Learnset%29={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
     }
     link: {
       label: "Link to {{pokemon_facts.final_evo_poke_filter_helper._value}} Index"
@@ -887,7 +886,7 @@ SELECT
 
     link: {
       label: "Link to {{pokemon_facts.int_evo_poke_filter_helper._value}} Deep Dive"
-      url: "/dashboards-next/6?Pokemon+Name={{pokemon_facts.int_evo_poke_filter_helper._value}}&Game%20Version%20(For%20Learnset)={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
+      url: "/dashboards-next/8?Pokemon+Name={{pokemon_facts.int_evo_poke_filter_helper._value}}&Game+Version+%28For+Learnset%29={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
     }
     link: {
       label: "Link to {{pokemon_facts.int_evo_poke_filter_helper._value}} Index"
@@ -931,7 +930,7 @@ SELECT
 
     link: {
       label: "Link to {{pokemon_facts.begin_evo_poke_filter_helper._value}} Deep Dive"
-      url: "/dashboards-next/6?Pokemon+Name={{pokemon_facts.begin_evo_poke_filter_helper._value}}&Game%20Version%20(For%20Learnset)={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
+      url: "/dashboards-next/8?Pokemon+Name={{pokemon_facts.begin_evo_poke_filter_helper._value}}&Game+Version+%28For+Learnset%29={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
     }
     link: {
       label: "Link to {{pokemon_facts.begin_evo_poke_filter_helper._value}} Index"

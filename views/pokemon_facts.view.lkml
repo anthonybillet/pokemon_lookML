@@ -317,6 +317,37 @@ SELECT
     order_by_field: version_group_id
   }
 
+
+  dimension: game_ver_seribii_link_helper {
+    # hidden: yes
+    type: string
+    sql: CASE
+              WHEN ${version_group_id} IN(1,2) THEN ''
+              WHEN ${version_group_id} IN(3,4) THEN '-gs'
+              WHEN ${version_group_id} IN(5,6,7) THEN '-rs'
+              WHEN ${version_group_id} IN(8,9,10) THEN '-dp'
+              WHEN ${version_group_id} IN(11,14) THEN '-bw'
+              WHEN ${version_group_id} IN(15,16) THEN '-xy'
+              WHEN ${version_group_id} IN(15,16) THEN '-sm'
+              WHEN ${version_group_id} IN(17,18) THEN '-swsh'
+              ELSE ''
+          END;;
+  }
+
+  dimension: location {
+    type: string
+    sql: 'Location Link' ;;
+    html:
+    {% if pokemon_facts.id._value < 10 %}
+          <a href = 'https://www.serebii.net/pokedex{{pokemon_facts.game_ver_seribii_link_helper._value}}/00{{pokemon_facts.id._value}}.shtml' target="_blank">
+    {% elsif pokemon_facts.id._value < 100 %}
+          <a href = 'https://www.serebii.net/pokedex{{pokemon_facts.game_ver_seribii_link_helper._value}}/0{{pokemon_facts.id._value}}.shtml' target="_blank">
+    {% else %}
+          <a href = 'https://www.serebii.net/pokedex{{pokemon_facts.game_ver_seribii_link_helper._value}}/{{pokemon_facts.id._value}}.shtml' target="_blank">
+    {% endif %}
+    Location Link (Seribii);;
+  }
+
   dimension: move_id {
     view_label: "Moves"
     label: "ID"
@@ -388,19 +419,33 @@ SELECT
     ;;
   }
 
+  dimension: move_damage_class_raw {
+    hidden: no
+    type: string
+    sql:${TABLE}.damage_class ;;
+  }
+
   dimension: move_damage_class {
     view_label: "Moves"
     label: "Damage Class"
     type: string
-    sql: ${TABLE}.damage_class ;;
+    sql: CASE
+              WHEN ${move_damage_class_raw} = 'status' THEN 'status'
+              WHEN ${version_group_id} <= 7 AND ${move_type} IN ('normal','fighting','flying', 'poison', 'ground', 'rock', 'bug', 'ghost','steel')
+                  THEN 'physical'
+              WHEN ${version_group_id} <= 7 AND ${move_type} IN ('fire','water','grass','electric', 'psychic', 'ice', 'dragon', 'dark')
+                  THEN 'special'
+              ELSE ${move_damage_class_raw}
+          END
+      ;;
     html: {% if pokemon_facts.move_damage_class._value == "physical" %}
-           <img src="http://faqsmedia.ign.com/faqs/image/article/109/1094653/physical_attack_icon.jpg" height="30%" width="30%">
+          <img src="http://faqsmedia.ign.com/faqs/image/article/109/1094653/physical_attack_icon.jpg"height="50%" width="50%">
           {% elsif pokemon_facts.move_damage_class._value == "special" %}
-           <img src="https://icon-library.com/images/special-attack-icon/special-attack-icon-2.jpg" height="30%" width="30%">
+          <img src="https://icon-library.com/images/special-attack-icon/special-attack-icon-2.jpg" height="50%" width="50%">
           {% elsif pokemon_facts.move_damage_class._value == "status" %}
-           <img src="https://icon-library.com/images/special-attack-icon/special-attack-icon-1.jpg" height="30%" width="30%">
+          <img src="https://icon-library.com/images/special-attack-icon/special-attack-icon-1.jpg" height="50%" width="50%">
           {% else %}
-           {{linked_value}}
+          {{linked_value}}
           {% endif %}
           ;;
   }

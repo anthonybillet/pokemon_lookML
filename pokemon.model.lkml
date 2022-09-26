@@ -7,3 +7,5 @@ explore: pokemon_facts {
 }
 
 # explore: evo_condtions {}
+
+# explore: mo {}

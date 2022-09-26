@@ -191,6 +191,17 @@ SELECT
       url: "/dashboards-next/8?Pokemon+Name={{pokemon_facts.pokemon_name._value}}&Game+Version+%28For+Learnset%29={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
     }
     link: {
+      label: "Location Link (Seribii)"
+      url: "
+      {% if pokemon_facts.id._value < 10 %}
+      https://www.serebii.net/pokedex{{pokemon_facts.game_ver_seribii_link_helper._value}}/00{{pokemon_facts.id._value}}.shtml
+      {% elsif pokemon_facts.id._value < 100 %}
+      https://www.serebii.net/pokedex{{pokemon_facts.game_ver_seribii_link_helper._value}}/0{{pokemon_facts.id._value}}.shtml
+      {% else %}
+      https://www.serebii.net/pokedex{{pokemon_facts.game_ver_seribii_link_helper._value}}/{{pokemon_facts.id._value}}.shtml
+      {% endif %}"
+    }
+    link: {
       label: "Link to {{value}} Index"
       url: "http://pokemon-index.com/p/{{pokemon_facts.pokemon_name_lower._value}}"
     }
@@ -207,6 +218,17 @@ SELECT
       url: "/dashboards-next/8?Pokemon+Name={{pokemon_facts.pokemon_name._value}}&Game+Version+%28For+Learnset%29={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
     }
     link: {
+      label: "Location Link (Seribii)"
+      url: "
+      {% if pokemon_facts.id._value < 10 %}
+      https://www.serebii.net/pokedex{{pokemon_facts.game_ver_seribii_link_helper._value}}/00{{pokemon_facts.id._value}}.shtml
+      {% elsif pokemon_facts.id._value < 100 %}
+      https://www.serebii.net/pokedex{{pokemon_facts.game_ver_seribii_link_helper._value}}/0{{pokemon_facts.id._value}}.shtml
+      {% else %}
+      https://www.serebii.net/pokedex{{pokemon_facts.game_ver_seribii_link_helper._value}}/{{pokemon_facts.id._value}}.shtml
+      {% endif %}"
+    }
+    link: {
       label: "Link to {{value}} Index"
       url: "http://pokemon-index.com/p/{{pokemon_facts.pokemon_name_lower._value}}"
     }
@@ -220,6 +242,18 @@ SELECT
     html: <img src="https://img.pokemondb.net/sprites/sword-shield/icon/{{pokemon_facts.pokemon_name_lower._value}}.png">;;
     link: {
       label: "Link to {{value}} Deep Dive"
+      url: "/dashboards-next/8?Pokemon+Name={{pokemon_facts.pokemon_name._value}}&Game+Version+%28For+Learnset%29={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
+    }
+    link: {
+      label: "Location Link (Seribii)"
+      url: "
+      {% if pokemon_facts.id._value < 10 %}
+      https://www.serebii.net/pokedex{{pokemon_facts.game_ver_seribii_link_helper._value}}/00{{pokemon_facts.id._value}}.shtml
+      {% elsif pokemon_facts.id._value < 100 %}
+      https://www.serebii.net/pokedex{{pokemon_facts.game_ver_seribii_link_helper._value}}/0{{pokemon_facts.id._value}}.shtml
+      {% else %}
+      https://www.serebii.net/pokedex{{pokemon_facts.game_ver_seribii_link_helper._value}}/{{pokemon_facts.id._value}}.shtml
+      {% endif %}"
     }
     link: {
       label: "Link to {{value}} Index"
@@ -237,6 +271,17 @@ SELECT
     link: {
       label: "Link to {{value}} Deep Dive"
       url: "/dashboards-next/8?Pokemon+Name={{pokemon_facts.pokemon_name._value}}&Game+Version+%28For+Learnset%29={{ _filters['pokemon_facts.move_game_version'] | url_encode }}"
+    }
+    link: {
+      label: "Location Link (Seribii)"
+      url: "
+            {% if pokemon_facts.id._value < 10 %}
+                https://www.serebii.net/pokedex{{pokemon_facts.game_ver_seribii_link_helper._value}}/00{{pokemon_facts.id._value}}.shtml
+            {% elsif pokemon_facts.id._value < 100 %}
+                https://www.serebii.net/pokedex{{pokemon_facts.game_ver_seribii_link_helper._value}}/0{{pokemon_facts.id._value}}.shtml
+            {% else %}
+                https://www.serebii.net/pokedex{{pokemon_facts.game_ver_seribii_link_helper._value}}/{{pokemon_facts.id._value}}.shtml
+            {% endif %}"
     }
     link: {
       label: "Link to {{value}} Index"

@@ -4,8 +4,9 @@ include: "/views/**/**.view.lkml"
 include: "/dashboards/*.dashboard.lookml"
 label: "Z) Ant Billet Test"
 
-explore: pokemon_facts {
-}
+include: "/explores/pokemon_facts.explore.lkml"
+# explore: pokemon_facts {
+# }
 
 # explore: evo_condtions {}
 

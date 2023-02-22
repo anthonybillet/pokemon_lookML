@@ -1,4 +1,6 @@
 view: pokemon_facts {
+
+  #test comment
   derived_table: {
     sql_trigger_value: SELECT DATE_TRUNC(CURRENT_DATE(), MONTH) ;;
     sql: WITH defensive_type_multipliers AS (WITH defensive_type_efficacy AS (SELECT pokemon.identifier as name,pokemon.id AS pokemon_id, types.identifier as type, defensive_efficacy.damage_type_id, incoming_attack_type.identifier as attack_type,incoming_attack_type.id AS attack_type_id, defensive_efficacy.damage_factor
